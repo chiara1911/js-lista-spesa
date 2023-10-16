@@ -5,23 +5,22 @@
 
 
 // preparare costanti
-const fresh = document.getElementById('fresh').value;
-console.log(fresh);
-const btn = document.querySelector('button');
+
 
 // array vuota lista della spesa
-const lista = [];
+let lista = [];
+let fresh = '';
+while (fresh != 'stop') {
+    fresh = prompt("Cosa vuoi comprare?");
+if (fresh !== 'stop'){
+    lista.push(fresh);}  
+};
+const listEl = document.getElementById ('lista');
+for ( i = 0; i < lista.length; i++){
+    console.log(lista[i]);
+  const listItem = document.createElement('li');
+  listItem.innerHTML = lista[i];
+listEl.appendChild(listItem);
+}
 
-btn.addEventListener('click', function(){
-    let trovato = false;
-    let i = 0;
 
-    while (i < lista.length && !trovato) {
-            
-        i++;
-        lista.push(fresh);
-        
-    }
-    
-
-});
